@@ -89,7 +89,7 @@ class FuturisticPortfolio {
             });
         });
 
-        // Smooth scrolling for navigation links - FIXED
+        // Smooth scrolling for navigation links
         document.querySelectorAll('.nav-link').forEach(link => {
             link.addEventListener('click', (e) => {
                 e.preventDefault();
@@ -106,7 +106,7 @@ class FuturisticPortfolio {
             });
         });
 
-        // CTA button click - FIXED
+        // CTA button click
         const exploreBtn = document.getElementById('explore-btn');
         if (exploreBtn) {
             exploreBtn.addEventListener('click', (e) => {
@@ -122,7 +122,7 @@ class FuturisticPortfolio {
             });
         }
 
-        // Form submission - FIXED
+        // Form submission
         const contactForm = document.querySelector('.contact-form');
         if (contactForm) {
             contactForm.addEventListener('submit', (e) => {
@@ -363,38 +363,57 @@ class FuturisticPortfolio {
         }
     }
 
+    // Updated handleFormSubmission with Formspree integration
     handleFormSubmission(form) {
-        // Get form data
         const formData = new FormData(form);
-        const name = formData.get('name');
-        const email = formData.get('email');
-        const message = formData.get('message');
-        
-        // Validate form data
+        const name = formData.get('name')?.trim();
+        const email = formData.get('email')?.trim();
+        const message = formData.get('message')?.trim();
+
         if (!name || !email || !message) {
             this.showNotification('Please fill in all fields!', 'error');
             return;
         }
-        
-        // Create success notification - FIXED
-        this.showNotification('Message sent successfully! ✨', 'success');
-        
-        // Reset form
-        form.reset();
-        
-        // Reset form labels
-        const labels = form.querySelectorAll('.form-label');
-        labels.forEach(label => {
-            label.style.top = '1rem';
-            label.style.left = '1rem';
-            label.style.fontSize = '1rem';
-            label.style.color = 'var(--color-gray-400)';
-            label.style.background = 'transparent';
-            label.style.padding = '0';
+
+        // Send form data to Formspree endpoint
+        fetch('https://formspree.io/f/mjkoogrv', {
+            method: 'POST',
+            body: formData,
+            headers: {
+                'Accept': 'application/json'
+            }
+        }).then(response => {
+            if (response.ok) {
+                this.showNotification('Message sent successfully! ✨', 'success');
+
+                form.reset();
+
+                // Reset form labels styles
+                const labels = form.querySelectorAll('.form-label');
+                labels.forEach(label => {
+                    label.style.top = '1rem';
+                    label.style.left = '1rem';
+                    label.style.fontSize = '1rem';
+                    label.style.color = 'var(--color-gray-400)';
+                    label.style.background = 'transparent';
+                    label.style.padding = '0';
+                });
+
+                // Trigger particle explosion effect if exists
+                if (typeof this.createParticleExplosion === 'function') {
+                    this.createParticleExplosion(window.innerWidth / 2, window.innerHeight / 2);
+                }
+            } else {
+                response.json().then(data => {
+                    const errors = data.errors ? data.errors.map(e => e.message).join(', ') : 'Failed to send message.';
+                    this.showNotification(errors, 'error');
+                }).catch(() => {
+                    this.showNotification('Failed to send message.', 'error');
+                });
+            }
+        }).catch(() => {
+            this.showNotification('Network error: Please try again later.', 'error');
         });
-        
-        // Trigger particle explosion effect
-        this.createParticleExplosion(window.innerWidth / 2, window.innerHeight / 2);
     }
 
     showNotification(message, type = 'success') {
