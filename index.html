@@ -253,9 +253,28 @@
                         <a href="https://linkedin.com/in/santhoshbollam" target="_blank" class="social-link">
                             <span class="social-text">LinkedIn</span>
                         </a>
-                        <a href="mailto:santoshsubbubollam007@gmail.com" class="social-link">
-                            <span class="social-text">Email</span>
-                        </a>
+                        <a href="#" id="email-link" class="social-link">
+                              <span class="social-text">Email</span>
+                            </a>
+                        <script>
+                            document.getElementById('email-link').addEventListener('click', function(e) {
+                                e.preventDefault();
+// Gmail compose URL
+    const gmailUrl = 'https://mail.google.com/mail/?view=cm&fs=1&to=santoshsubbubollam007@gmail.com';
+    // mailto URL
+    const mailtoUrl = 'mailto:santoshsubbubollam007@gmail.com';
+
+    // Try to open Gmail compose in a new tab
+    const newWindow = window.open(gmailUrl, '_blank');
+
+    // If popup blocked, fallback to mailto:
+    if (!newWindow || newWindow.closed || typeof newWindow.closed == 'undefined') {
+      window.location.href = mailtoUrl;
+    }
+  });
+</script>
+
+
                     </div>
 <!--                     <div class="certifications">
                         <h4>CERTIFICATIONS</h4>
