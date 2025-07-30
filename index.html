@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Santhosh Bollam | Futuristic Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="loading-screen">
+        <div class="loading-content">
+            <div class="loading-logo">
+                <div class="loading-particles"></div>
+                <span class="loading-text">INITIALIZING...</span>
+            </div>
+            <div class="loading-bar">
+                <div class="loading-progress"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Custom Cursor -->
+    <div class="cursor"></div>
+    <div class="cursor-trail"></div>
+
+    <!-- Particle Background -->
+    <canvas id="particle-canvas"></canvas>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="logo-text">SB</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#hero" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#experience" class="nav-link">Experience</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="hero-content">
+            <div class="hero-bg-elements">
+                <div class="floating-shape shape-1"></div>
+                <div class="floating-shape shape-2"></div>
+                <div class="floating-shape shape-3"></div>
+            </div>
+            <h1 class="hero-title">
+                <span class="title-line" id="name-text"></span>
+                <span class="cursor-blink">|</span>
+            </h1>
+            <p class="hero-subtitle" id="subtitle-text">Custom Software Analyst</p>
+            <p class="hero-description">Automation Testing & Virtual Machine Management Specialist</p>
+            <div class="hero-cta">
+                <button class="cta-btn" id="explore-btn">
+                    <span class="btn-text">EXPLORE PROFILE</span>
+                    <div class="btn-particles"></div>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="title-glow">ABOUT</span>
+            </h2>
+            <div class="about-content">
+                <div class="about-card glass-card">
+                    <div class="card-glow"></div>
+                    <div class="about-info">
+                        <h3>Santhosh Bollam</h3>
+                        <p class="about-bio">Navigating the complexities of automation testing with ease, spearheading projects with precision, and delivering quality on time—this is my daily drive. I have a solid ECE foundation and am skilled with Python, Java, Selenium, and more.</p>
+                        <div class="contact-info">
+                            <div class="info-item">
+                                <span class="info-label">Email:</span>
+                                <span class="info-value">santoshsubbubollam007@gmail.com</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">Location:</span>
+                                <span class="info-value">Machilipatnam, Andhra Pradesh, India</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skills-matrix">
+                    <h4>SKILL MATRIX</h4>
+                    <div class="skills-grid">
+                        <div class="skill-hex" data-skill="Automation Testing" data-level="95">
+                            <div class="hex-inner">
+                                <span class="skill-name">Testing</span>
+                                <span class="skill-level">95%</span>
+                            </div>
+                        </div>
+                        <div class="skill-hex" data-skill="Python" data-level="90">
+                            <div class="hex-inner">
+                                <span class="skill-name">Python</span>
+                                <span class="skill-level">90%</span>
+                            </div>
+                        </div>
+                        <div class="skill-hex" data-skill="Java" data-level="85">
+                            <div class="hex-inner">
+                                <span class="skill-name">Java</span>
+                                <span class="skill-level">85%</span>
+                            </div>
+                        </div>
+                        <div class="skill-hex" data-skill="Selenium" data-level="92">
+                            <div class="hex-inner">
+                                <span class="skill-name">Selenium</span>
+                                <span class="skill-level">92%</span>
+                            </div>
+                        </div>
+                        <div class="skill-hex" data-skill="VM Management" data-level="88">
+                            <div class="hex-inner">
+                                <span class="skill-name">VMs</span>
+                                <span class="skill-level">88%</span>
+                            </div>
+                        </div>
+                        <div class="skill-hex" data-skill="Problem Solving" data-level="94">
+                            <div class="hex-inner">
+                                <span class="skill-name">Problem</span>
+                                <span class="skill-level">94%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="experience">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="title-glow">EXPERIENCE</span>
+            </h2>
+            <div class="timeline">
+                <div class="timeline-line"></div>
+                <div class="timeline-item" data-aos="slide-right">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content glass-card">
+                        <div class="card-glow"></div>
+                        <h3>Custom Software Engineering Analyst</h3>
+                        <h4>Accenture</h4>
+                        <span class="duration">Aug 2024 – Present</span>
+                        <p>Leading automation testing initiatives and managing virtual machine infrastructure for enterprise clients.</p>
+                    </div>
+                </div>
+                <div class="timeline-item" data-aos="slide-left">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content glass-card">
+                        <div class="card-glow"></div>
+                        <h3>Associate Consultant</h3>
+                        <h4>Atos</h4>
+                        <span class="duration">Dec 2021 – Jul 2024</span>
+                        <p>Developed and maintained automated testing frameworks, collaborated with cross-functional teams on software delivery.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="title-glow">PROJECTS</span>
+            </h2>
+            <div class="projects-grid">
+                <div class="project-card glass-card" data-aos="fade-up">
+                    <div class="card-glow"></div>
+                    <div class="project-header">
+                        <h3>Enterprise Test Automation Framework</h3>
+                    </div>
+                    <div class="project-content">
+                        <p>Developed a comprehensive automation framework reducing testing time by 60%</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Selenium</span>
+                            <span class="tech-tag">Jenkins</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card glass-card" data-aos="fade-up" data-delay="200">
+                    <div class="card-glow"></div>
+                    <div class="project-header">
+                        <h3>VM Infrastructure Optimization</h3>
+                    </div>
+                    <div class="project-content">
+                        <p>Optimized virtual machine deployment processes for improved performance</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">VMware</span>
+                            <span class="tech-tag">Linux</span>
+                            <span class="tech-tag">Shell</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card glass-card" data-aos="fade-up" data-delay="400">
+                    <div class="card-glow"></div>
+                    <div class="project-header">
+                        <h3>Home Automation Innovation</h3>
+                    </div>
+                    <div class="project-content">
+                        <p>Created innovative home automation solutions during college</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">IoT</span>
+                            <span class="tech-tag">Arduino</span>
+                            <span class="tech-tag">Python</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="title-glow">CONTACT</span>
+            </h2>
+            <div class="contact-content">
+                <div class="contact-form-wrapper">
+                    <form class="contact-form glass-card">
+                        <div class="card-glow"></div>
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" required class="form-input">
+                            <label for="name" class="form-label">Name</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" required class="form-input">
+                            <label for="email" class="form-label">Email</label>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" name="message" required class="form-input" rows="5"></textarea>
+                            <label for="message" class="form-label">Message</label>
+                        </div>
+                        <button type="submit" class="submit-btn">
+                            <span class="btn-text">SEND MESSAGE</span>
+                            <div class="btn-particles"></div>
+                        </button>
+                    </form>
+                </div>
+                <div class="contact-info-section">
+                    <div class="social-links">
+                        <a href="https://linkedin.com/in/santhoshbollam" target="_blank" class="social-link">
+                            <span class="social-text">LinkedIn</span>
+                        </a>
+                        <a href="mailto:santoshsubbubollam007@gmail.com" class="social-link">
+                            <span class="social-text">Email</span>
+                        </a>
+                    </div>
+                    <div class="certifications">
+                        <h4>CERTIFICATIONS</h4>
+                        <ul>
+                            <li>e-Yantra Ideas Competition (IIT Bombay) - Feb 2020</li>
+                            <li>CCNA: Introduction to Networks (Cisco) - Aug 2020</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="app.js"></script>
+</body>
+</html>
